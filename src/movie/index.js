@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import LinesEllipsis from 'react-lines-ellipsis';
 import './Movie.css';
 
-function Movie({title, poster, genres, synopsis}) {
+function Movie({title, poster, link, genres, synopsis}) {
     return (
         <div className="Movie">
             <div className="Movie__Column">
@@ -12,7 +12,7 @@ function Movie({title, poster, genres, synopsis}) {
             <div className="Movie__Column">
                 <h1>{title}</h1>
                 <div className="Movie__Genres">
-                    {genres.map((genre, index) => <MovieGenre genre={genre} key={index} />)}
+                    <a href={link} style={{ textDecoration: "none", color: "green" }}>{genres}</a>
                 </div>
                 <div className="Movie__Synopsis">
                     <LinesEllipsis
